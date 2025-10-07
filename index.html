@@ -16,5 +16,12 @@
     <p>Se puede instalar como aplicacion en tu celular</p>
 
     <button onclick="alert('Hola desde la PWA')">Click aqui</button>
+    <script>
+        if('serviceWorker' in navigator){
+            navigator.serviceWorker.register("/repo/sw.js")
+            .then(reg => console.log("Service Worker registrado"))
+            .catch(err => console.log("Error al registar el SW", err));
+        }
+    </script>
 </body>
 </html>
