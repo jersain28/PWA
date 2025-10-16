@@ -33,4 +33,19 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Leer sobre eventos del navegador
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => {
+                return response || fetch(event.request).catch(() => caches.match('offline.html'));
+            })
+    );
+});
+
+
+self.addEventListener('push', event => {
+    const data = event.data ? event.data.text() : 'Notificación sin texto';
+    event.waitUntil(
+        self.registration.showNotification("Mi PWA", {body: data})
+    );
+});
