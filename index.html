@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi primera PWA</title>
+    <title>Mi primer PWA</title>
 
-    <!-- Vincular el manifest -->
-    <link rel="manifest" href="manifest.json">
+    <!-- Vicular el manifest -->    
+     <link rel="manifest" href="manifest.json">
 
-    <!-- Definir color de la barra de la navegacion en  moviles -->
-    <meta name="theme-color" content="#2196f3"/>
+     <!--Definir color de la barra de navegacion en moviles -->
+     <meta name="theme-color" content="#2196f3">
+
 </head>
 <body>
-    <h1>Bienvenido a mi primera PWA</h1>
-    <p>Se puede instalar como aplicacion en tu celular</p>
+    <h1>Bienvenido a mi PWA</h1>
+    <p>Se puede instalar como aplicación en tu celular</p>
 
-    <button onclick="alert('Hola desde la PWA')">Click aqui</button>
+    <button onclick="alert('Hola desde la PWA!')">Click aqui</button>
     <script>
-        if('serviceWorker' in navigator){
-            navigator.serviceWorker.register("sw.js")
-            .then(() => console.log("Service Worker registrado"))
-            .catch(err => console.log("Error al registar el SW", err));
+        if("serviceWorker" in navigator){
+            navigator.serviceWorker
+            .register("sw.js")
+            .then(()=> console.log("Service worker registrado"))
+            .catch(err => console.log("Error al registrar el service worker", err));
         }
-
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
     </script>
+
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li></li>
+    </ul>
+
 </body>
 </html>
